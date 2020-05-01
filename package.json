@@ -24,7 +24,8 @@
     "react-router": "^2.4.0",
     "react-tap-event-plugin": "^1.0.0",
     "typography": "^0.7.0",
-    "underscore.string": "^3.2.2"
+    "underscore.string": "^3.2.2",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "babel-preset-react-hmre": "^1.1.1",
@@ -43,6 +44,9 @@
   "scripts": {
     "lint": "./node_modules/.bin/eslint --ext .js,.jsx --ignore-pattern public .",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy": "gh-pages -d public"
-  }
+    "deploy": "gh-pages -d public",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
+  },
+  "snyk": true
 }
